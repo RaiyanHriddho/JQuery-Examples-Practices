@@ -1,0 +1,382 @@
+CODE-01
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me to hide paragraphs</button>
+
+</body>
+</html>
+
+                        CODE-02
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#test").hide();
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p id="test">This is another paragraph.</p>
+
+<button>Click me</button>
+
+</body>
+</html>
+
+                       CODE-03
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".test").hide();
+  });
+});
+</script>
+</head>
+<body>
+
+<h2 class="test">This is a heading</h2>
+
+<p class="test">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Click me</button>
+
+</body>
+</html>
+
+                        CODE-03
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</body>
+</html>
+
+                        CODE-04
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
+});
+</script>
+</head>
+<body>
+
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+</body>
+</html>
+
+                        CODE-05
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Looping through jQuery collections</title>
+        <style>
+            .crocodile {
+                color: green;
+                font-family: fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h2 id="cuteness">Cats are cute!</h2>
+
+        <p>Cats are widely known to be one of the cutest animals. It has long been rumored that they have put all of humanity under a hypnosis, so that they can achieve their goals of getting fed while also getting to do whatever they darn want around our houses.</p>
+        
+        <p>This cat is exhibiting what's known as the "so-cute-now-feed-me" face:</p>
+        <a href="https://en.wikipedia.org/wiki/Cat_food">
+            <img src="https://www.kasandbox.org/programming-images/animals/cat.png" width="50">
+        </a>
+        
+        <h2 id="activities">Common cat activities (Cat-ivities)</h2>
+        
+        <p>Cats enjoy attacking innocent pieces of string, walking around your legs at the exact moment that you're trying to flip a pancake on the stove, sleeping for hours and hours and hours, and pouncing on unsuspecting laser dots.</p> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/2006-07-07_katze_mit_angel.jpg" width="50">
+        
+        <a href="https://en.wikipedia.org/wiki/Cat">Learn more</a>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        // Modifying elements
+        $("h2").text("CROCODILE ATTACK!");
+        $("p").html("The crocodiles are coming - <strong>oh noess</strong>!!");
+        $("p").css("color", "green");
+        $("h2").addClass("crocodile");
+        $("a").attr("href", "https://en.wikipedia.org/wiki/Crocodile");
+        $("img").attr("src", "https://www.kasandbox.org/programming-images/animals/crocodiles.png");
+        
+        
+        </script>
+    </body>
+</html>
+
+                        CODE-06
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Loopy language</title>
+    </head>
+    <body>
+        
+        <h1>All about Pig Latin</h1>
+        <p>Pig Latin is a language game in which words in English are altered. The objective is to conceal the meaning of the words from others not familiar with the rules. The reference to Latin is a deliberate misnomer, as it is simply a form of jargon, used only for its English connotations as a strange and foreign-sounding language.</p>
+        <p>The origins of Pig Latin are unknown. A youthful Thomas Jefferson wrote letters to friends in Pig Latin.</p>
+        <p>For words that begin with consonant sounds, the initial consonant or consonant cluster is moved to the end of the word, and "ay" is added.</p>
+
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+        <script>
+// Takes a string and returns Pig Latin version of it
+var toPigLatin = function(str) {
+    if (!str.replace) {
+        return 'ERROR: Expected a string!';
+    }
+    return str.replace(/\b(\w)(\w+)\b/g, '$2-$1ay').toLowerCase();
+};
+
+// Iterate through each paragraph, call the toPigLatin function on it
+var $paragraphs = $("p");
+
+        </script>
+    </body>
+</html>
+
+                         CODE-07
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chaining jQuery methods</title>
+        <style>
+            .crocodile {
+                color: green;
+                font-family: fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h2 id="cuteness">Cats are cute!</h2>
+
+        <p>Cats are widely known to be one of the cutest animals. It has long been rumored that they have put all of humanity under a hypnosis, so that they can achieve their goals of getting fed while also getting to do whatever they darn want around our houses.</p>
+        
+        <p>This cat is exhibiting what's known as the "so-cute-now-feed-me" face:</p>
+        <a href="https://en.wikipedia.org/wiki/Cat_food">
+            <img src="https://www.kasandbox.org/programming-images/animals/cat.png" width="50">
+        </a>
+        
+        <h2 id="activities">Common cat activities (Cat-ivities)</h2>
+        
+        <p>Cats enjoy attacking innocent pieces of string, walking around your legs at the exact moment that you're trying to flip a pancake on the stove, sleeping for hours and hours and hours, and pouncing on unsuspecting laser dots.</p> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/2006-07-07_katze_mit_angel.jpg" width="50">
+        
+        <a href="https://en.wikipedia.org/wiki/Cat">Learn more</a>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        // Modifying elements
+        $("h2").text("CROCODILE ATTACK!");
+        $("p").html("The crocodiles are coming - <strong>oh noess</strong>!!");
+        $("p").css("color", "green");
+        $("h2").addClass("crocodile");
+        $("a").attr("href", "https://en.wikipedia.org/wiki/Crocodile");
+        $("img").attr("src", "https://www.kasandbox.org/programming-images/animals/crocodiles.png");
+        
+        // Creating elements
+        var newP = $("<p>");
+        newP.text("The crocodiles have eaten this ENTIRE PAGE!");
+        newP.addClass("crocodile");
+        $("body").append(newP);
+        
+        </script>
+    </body>
+</html>
+
+                        CODE-08
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Daisy chain</title>
+    </head>
+    <body>
+
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+        <script>
+        // You can use the daisy image at: 
+        // https://upload.wikimedia.org/wikipedia/commons/2/29/English_Daisy_(Bellis_Perennis).jpg
+        
+        </script>
+    </body>
+</html>
+
+                      CODE-09
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Croc Clicker</title>
+    </head>
+    <body>
+    
+    <h1>Challenge: Croc Clicker</h1>
+    <img id="crocs" src="https://www.kasandbox.org/programming-images/animals/crocodiles.png" width="300" alt="Crocodiles chilling">
+    <div id="results"></div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var numClicks = 0;
+    $("#results").text("You clicked " + numClicks + " times");
+    
+    </script>
+    
+
+    </body>
+</html>
+
+                       CODE-10
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using event properties in jQuery</title>
+        <style>
+            .crocodile {
+                color: green;
+                font-family: fantasy;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="cuteness">Cats are cute!</h2>
+
+        <p>Cats are widely known to be one of the cutest animals. It has long been rumored that they have put all of humanity under a hypnosis, so that they can achieve their goals of getting fed while also getting to do whatever they darn want around our houses.</p>
+        
+        <p>This cat is exhibiting what's known as the "so-cute-now-feed-me" face:</p>
+        <a href="https://en.wikipedia.org/wiki/Cat_food">
+            <img src="https://www.kasandbox.org/programming-images/animals/cat.png" width="50">
+        </a>
+        
+        <h2 id="activities">Common cat activities (Cat-ivities)</h2>
+        
+        <p>Cats enjoy attacking innocent pieces of string, walking around your legs at the exact moment that you're trying to flip a pancake on the stove, sleeping for hours and hours and hours, and pouncing on unsuspecting laser dots.</p> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/2006-07-07_katze_mit_angel.jpg" width="50">
+        
+        <a href="https://en.wikipedia.org/wiki/Cat">Learn more</a>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        
+        var crocodilize = function() {
+            $("h2").text("CROCODILE ATTACK!");
+            $("p").html("The crocodiles are coming - <strong>oh noess</strong>!!");
+            $("p").css("color", "green");
+            $("h2").addClass("crocodile");
+            $("a").attr("href", "https://en.wikipedia.org/wiki/Crocodile");
+            $("img").attr("src", "https://www.kasandbox.org/programming-images/animals/crocodiles.png");  
+        };
+        
+        crocodilize();
+        
+        // When the user clicks on the page:
+        //   create a new image
+        //   position it according to where click happened
+        
+        </script>
+    </body>
+</html>
